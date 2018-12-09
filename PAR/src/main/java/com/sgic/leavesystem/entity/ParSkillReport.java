@@ -20,32 +20,31 @@ public class ParSkillReport {
 	private Date parDate;
 	private Integer appraiserId;
 
-	@OneToMany(mappedBy = "parSkillReport",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JsonIgnore
-	private List<ParSkillsScore> parSkillsScore;
+//	 @OneToMany(cascade = CascadeType.ALL,mappedBy = "parSkillReport",fetch=FetchType.EAGER)
+//	 @JsonIgnore
+//	private List<ParSkillsScore> parSkillsScore;
 	
 	@ManyToOne
 	@JoinColumn(name= "par_id")
 	private Par par;
+	
+	
+	
 
 	public ParSkillReport(Integer rId, Date parDate, Integer appraiserId,Integer parId) {
-
+		super();
 		this.rId = rId;
 		this.parDate = parDate;
 		this.appraiserId = appraiserId;
-        this.par=new Par(parId,new Date());
+		this.par = new Par(parId,new Date());
 	}
 
-	public ParSkillReport() {
-
-	}
-
-	public Integer getReportId() {
+	public Integer getrId() {
 		return rId;
 	}
 
-	public void setReportId(Integer rid) {
-		this.rId = rid;
+	public void setrId(Integer rId) {
+		this.rId = rId;
 	}
 
 	public Date getParDate() {
@@ -64,14 +63,16 @@ public class ParSkillReport {
 		this.appraiserId = appraiserId;
 	}
 
-	public List<ParSkillsScore> getParSkillsScore() {
-		return parSkillsScore;
+	
+
+	public Par getPar() {
+		return par;
 	}
 
-	public void setParSkillsScore(List<ParSkillsScore> parSkillsScore) {
-		this.parSkillsScore = parSkillsScore;
+	public void setPar(Par par) {
+		this.par = par;
 	}
 
-
+	
 
 }

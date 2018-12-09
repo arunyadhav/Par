@@ -15,17 +15,17 @@ public class ParSkillReportService {
 @Autowired
 private ParSkillReportRepository parSkillReportRepository;
 
-		public List<ParSkillReport> getAll(Integer rId)
+		public List<ParSkillReport> getAll(Integer parId)
 		{
 			List<ParSkillReport> parSkillReport=new ArrayList<>();
-			parSkillReportRepository.findByParId(rId)
+			parSkillReportRepository.findByParId(parId)
 			.forEach(parSkillReport::add);
 			return parSkillReport;
 		}
 		
 		public ParSkillReport getParSkillReport(Integer appraiserId)
 		{
-			return parSkillReportRepository.findByRid(appraiserId);
+			return parSkillReportRepository.findByRId(appraiserId);
 			
 		}
 		

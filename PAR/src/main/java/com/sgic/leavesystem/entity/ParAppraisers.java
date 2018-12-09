@@ -23,7 +23,7 @@ public class ParAppraisers {
 	
 	public ParAppraisers(Integer appraiserId, String empId,Integer parId) {
 		this.appraiserId = appraiserId;
-		empId = empId;
+		this.empId = empId;
 		this.par=new Par(parId,new Date());
 	}
 
@@ -35,7 +35,6 @@ public class ParAppraisers {
 		this.par = par;
 	}
 
-	
 	public Integer getAppraiserId() {
 		return appraiserId;
 	}
@@ -46,7 +45,7 @@ public class ParAppraisers {
 		return empId;
 	}
 	public void setEmpId(String empId) {
-		empId = empId;
+		this.empId = empId;
 	}
 	
 	

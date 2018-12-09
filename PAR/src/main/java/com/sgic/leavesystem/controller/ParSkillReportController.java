@@ -1,5 +1,6 @@
 package com.sgic.leavesystem.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sgic.leavesystem.entity.Par;
 import com.sgic.leavesystem.entity.ParSkillReport;
 import com.sgic.leavesystem.service.ParSkillReportService;
 
@@ -34,14 +36,14 @@ public class ParSkillReportController {
 	@PostMapping("/par/{parId}/parskill")
 	public void addParSkillReport(@RequestBody ParSkillReport parSkillReport,@PathVariable Integer parId)
 	{
-//		parSkillReport.setPar(new Par(parId,new Date()));
+		parSkillReport.setPar(new Par(parId,new Date()));
 		parSkillReportService.addParSkillReport(parSkillReport);
 		
 	}
 	@PutMapping("/par/{parId}/parskill/{id}")
 	public void updateParSkillReport(@RequestBody ParSkillReport parSkillReport, @PathVariable Integer parId,@PathVariable Integer id )
 	{
-//		parSkillReport.set
+      	parSkillReport.setPar(new Par(parId,new Date()));
 		parSkillReportService.updateParSkillReport(parSkillReport);
 		
 	}
